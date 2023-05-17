@@ -2,13 +2,15 @@ import React from "react";
 import Home from './src/Home'
 import { Provider } from "react-redux";
 import Store from "./src/store/Store";
-
+import Cart from "./src/Cart";
+import Login from "./src/Login";
+import Register from './src/Register'
 
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import  Icon from "react-native-vector-icons/MaterialIcons";
-import Cart from "./src/Cart";
+
 
   // extensions imported for Asyncstorage
 
@@ -52,7 +54,19 @@ const App=()=>{
      <Provider store={Store}>
       {/* <PersistGate persistor={presist}> .. code for asyncstorage*/}
       <NavigationContainer>
-        <stack.Navigator> 
+        <stack.Navigator>
+          <stack.Screen
+          name="Login"
+          component={Login}
+          options={{
+            headerShown:false
+          }}/> 
+          <stack.Screen
+          name="Register"
+          component={Register}
+          options={{
+            headerShown:false
+          }}/>
           <stack.Screen
           name="Mytab"
           component={Mytab}
