@@ -1,3 +1,3 @@
 # React-native-Redux-toolkit-shoppingCart
 
-A simple shopping app which develped 
+A simple shopping app cart
