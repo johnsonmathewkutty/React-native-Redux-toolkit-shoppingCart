@@ -12,17 +12,13 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import  Icon from "react-native-vector-icons/MaterialIcons";
 
 
-  // extensions imported for Asyncstorage
-
-// import Store from "./src/store/Store";
-// import persistStore from "redux-persist/es/persistStore";
-// import { PersistGate } from "redux-persist/integration/react";
-// let presist=persistStore(Store);
+ 
 
 
  function Mytab(){
   const bottomtab=createBottomTabNavigator()
   return(
+      
     <bottomtab.Navigator>
       <bottomtab.Screen name="Home" component={Home}
       options={{
@@ -45,6 +41,7 @@ import  Icon from "react-native-vector-icons/MaterialIcons";
         }}
         />
     </bottomtab.Navigator>
+      
   )
 }
 
@@ -52,7 +49,6 @@ const App=()=>{
   const stack=createStackNavigator()
   return(
      <Provider store={Store}>
-      {/* <PersistGate persistor={presist}> .. code for asyncstorage*/}
       <NavigationContainer>
         <stack.Navigator>
           <stack.Screen
@@ -67,7 +63,7 @@ const App=()=>{
           options={{
             headerShown:false
           }}/>
-          <stack.Screen
+           <stack.Screen
           name="Mytab"
           component={Mytab}
           options={{
@@ -81,10 +77,8 @@ const App=()=>{
           component={Cart}/>
         </stack.Navigator>
       </NavigationContainer>
-      {/* </PersistGate> ..code for Asyncstorage */}
     </Provider>
   )
 }
-
 
 export default App;
